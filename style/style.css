@@ -1,5 +1,6 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Passion+One&family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
     --cor00: #ffdff1;
@@ -10,7 +11,7 @@
     --cor4: #FF7598;
     --cor5: #FF5678;
 
-    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-padrao:'Ubuntu', sans-serif;;
     --fonte-destaque: 'Satisfy', cursive;
 }
 * {
@@ -20,100 +21,208 @@
     font-family: var(--fonte-padrao);
 }
 
-body {
-    background-color: var(--cor0);
-    margin: 0 auto;
+body{
+    background-color: var(--cor00);
 }
 
-header {
-    background-image: linear-gradient(to bottom, var(--cor5), var(--cor1));
-    padding-top: 40px;
-    min-height: 150px;
-    text-align: center;
-    margin: 0 auto;
+header{
+    position: relative;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header > img  {
-    display: inline-block;
-    width: 50px;
+header img{
+    position: relative;
+    width: 100px;
+    border-radius: 50%;
     border: 1px solid var(--cor5);
-    border-radius: 100%;    
 }
 
-header > h1 {
-    font-family: var(--fonte-destaque);
-    color: var(--cor0);
-    font-size: 3em;
+nav{
+    position: relative;
+    display: flex;
+}
+nav ul, .menuBar{
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
-nav {
-    background-color: var(--cor1);    
-    margin: 0 auto;
-    padding: 20px 8px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.178);
-    text-align: center;
+nav ul li, .menuBar{
+    list-style: none;
 }
 
-nav > a {
-    text-decoration: none;
-    padding: 4px;
+nav ul li a, .menuBar{
     color: var(--cor5);
+    text-decoration: none;
+    margin-left: 30px;
+    padding: 10px;
+    border-radius: 6px;
     font-weight: bolder;
-    border-radius: 5px;
-    padding: 6px;    
 }
 
-nav > a:hover {
-    background-color: var(--cor5);
+.menuBar{
+    margin: 0;
+}
+
+nav ul li a:hover, .menuBar:hover{
     color: var(--cor0);
-    transition: 0.8s;
+    background-color: var(--cor5);
+    transition: 0.5s;
+}
+.nav.active{
+    position: fixed;
+    margin: 0;
+    top: 5px;
+    left: 0;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--cor5);
 }
 
-main {
-    min-width: 300px;
-    max-width: 1000px;
-    margin: 0 auto;
+.nav.active li{
+    text-align: left;
+    margin: 5px 0;
+    width: 100%;
     padding: 15px;
-    background-color: white;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.178);
-    margin-bottom: 5px;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-radius: 2px;
 }
 
-main p {
-    text-align: justify;
-    font-size: 1.2em;
-    line-height: 1.8em;
+.nav.active li a{
+    padding: 15px 5px;
+    text-align: left; 
+    color: var(--cor0);
 }
 
-footer {
+.nav.active li:hover, .nav.active li:hover a{
+    background-color: var(--cor0);
+    width: 100%;
+    color: var(--cor5);
+}
+
+.menuRespon{
+    display: none;
+}
+
+hr{
+    border: 1px solid var(--cor0);
+    height: 2px;
+}
+
+main h1{
+    font-family: var(--fonte-destaque);
+    font-size: 4em;
+    color: var(--cor5);
     text-align: center;
+    padding: 10px 0;
 }
-footer > p > a {
+.bc-ground{
+    position: relative;
+    width: 100%;
+    padding: 0 100px;
+}
+
+.bc-ground-child{
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-image: url(../image/image005.jpg);
+    border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bc-ground-child h2{
+    position: relative;
+    color: var(--cor0);
+    font-size: 4em;
+    padding: 20px 0;
+    text-shadow: 0px 0px 5px var(--cor4);
+}
+
+.bc-ground-child .btn{
+    text-align: center;
+    width: max-content;
+    display: inline-block;
     text-decoration: none;
     color: var(--cor5);
+    background-color: var(--cor00);
+    padding: 20px 30px;
+    font-size: 1.3em;
     font-weight: bold;
+    border-radius: 15px;
+    letter-spacing: 2px;
+    box-shadow: 0px 0px 5px var(--cor4);;
 }
 
-footer > div > a > img {
-    width: 40px;
-    border-radius: 100%;
+.bc-ground-child .btn:hover{
+    color: var(--cor0);
+    background-color: var(--cor5);
+    transition: 0.5s;
+}
+@media(max-width: 1145px){
+    .bc-ground-child h2{
+        text-align: center;
+    }    
 }
 
-.whatsIcon {
-    background-color: #43c453;
-    background-position: center center;
+@media(max-width: 862px){
+    header{
+        padding: 30px;
+    }
 }
 
-.instagramIcon {
-    background-image: linear-gradient(to top right, #fdce58, #ec5688);
-    background-position: center center;
+@media(max-width: 780px){
+    .bc-ground{
+        padding: 0 60px;
+    }
 }
 
-.tiktokIcon {
-    background-color: black;
-    background-position: center center;
+@media (max-width: 675px){
+    .bc-ground-child h2{
+        font-size: 2.5em;
+    } 
+    .bc-ground{
+        padding: 0;
+    }
+}
+
+@media(max-width: 718px){
+    nav ul{
+        display: none;
+    }
+    .menuRespon{
+        display: flex;
+        font-size: 2em;
+    }
+}
+
+@media(max-width: 490px){
+    main h1{
+        font-size: 3em;
+    }
+}
+
+@media(max-width: 355px){
+    header img{
+        width: 60px;
+    }
+    main h1{
+        font-size: 2em;
+    }
+    .bc-ground-child h2{
+        font-size: 1.8em;
+    }
 }
